@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Une description pertinente">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpack</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- 
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * *                                                                             * * 
+    * *    Instructions :                                                           * *
+    * *    - Corriger les erreurs d'accessibilité dans cette page web               * *
+    * *    - Vous pouvez :                                                          * *
+    * *    - Modifier le code HTML                                                  * *
+    * *    - Modifier le code CSS                                                   * *
+    * *    - Modifier le code JS                                                    * *
+    * *                                                                             * *
+    * *    Conseils :                                                               * *
+    * *    - Installer les plugins d'access Chrome ou/et Firefox                    * *
+    * *    -> https://formation.warren-walter.com/_liste-plugin/accessibilite-liste-des-plugins-et-logiciels.pdf
+    * *                                                                             * *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    -->
+
+    <div class="container">
+        <div>
+            <a href="#main" id="skip-link" title="Contenu principal">
+                <span class="sr-only">vers contenu principal</span>
+                <span>Contenu principal</span>
+            </a>
+        </div>
+
+        <header class="header">
+
+            <div class="inner">
+
+                <!-- Logo -->
+                <div class="header-logo">
+                    <h1><a href="/" class="header-logo-link"
+                            title="Nom site Backpack - redirection vers la page d'accueil">
+                            <img src="./img/logo.png" alt="" class="header-logo-img">
+                            <span class="header-logo-baseline">Backpack</span>
+                        </a>
+                    </h1>
+                </div>
+
+                <!-- Nav -->
+                <nav aria-label="Menu principal">
+                    <ul class="header-nav">
+                        <li class="header-nav-item">
+                            <a href="#section-1" class="header-nav-link">Voyages</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="#section-2" class="header-nav-link">Assurances</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="#section-3" class="header-nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Rechercher -->
+                <div class="header-search">
+                    <form action="#" class="header-search-form" method="get" role="search">
+                        <input type="search" name="header-search-input" aria-label="Votre recherche"
+                            class="header-search-input">
+                        <button class="header-search-btn" id="header-search-btn" name="header-search-btn">
+                            <span class="sr-only">OK</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#FFFFFF"
+                                aria-hidden="true" focusable="false">
+                                <path
+                                    d="M225.474 0C101.151 0 0 101.151 0 225.474c0 124.33 101.151 225.474 225.474 225.474 124.33 0 225.474-101.144 225.474-225.474C450.948 101.151 349.804 0 225.474 0zm0 409.323c-101.373 0-183.848-82.475-183.848-183.848S124.101 41.626 225.474 41.626s183.848 82.475 183.848 183.848-82.475 183.849-183.848 183.849z" />
+                                <path
+                                    d="M505.902 476.472L386.574 357.144c-8.131-8.131-21.299-8.131-29.43 0-8.131 8.124-8.131 21.306 0 29.43l119.328 119.328A20.74 20.74 0 00491.187 512a20.754 20.754 0 0014.715-6.098c8.131-8.124 8.131-21.306 0-29.43z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Panier -->
+                <div class="shoppingcart">
+
+                    <div class="shoppingcart-item-number" id="shoppingcart-item-number" aria-live="polite">
+                        Panier : <span id="number">0</span> <span id="shoppingcart-product">voyage</span>
+                    </div>
+
+                    <ul class="shoppingcart-list" id="shoppingcart-list" aria-live="polite">
+                        <!-- Insert item JS -->
+                    </ul>
+
+                    <div class="shoppingcart-valided">
+                        <button type="button" id="shoppingcart-valided" name="shoppingcart-valided">Valider votre
+                            panier</button>
+                    </div>
+                </div>
+                <!-- / Panier -->
+
+            </div>
+            <!-- / inner -->
+
+        </header>
+        <!-- / header -->
+
+        <main id="main">
+            <div class="color-palet" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Produit ajout panier -->
+            <section id="section-1" class="section section-1">
+                <div class="inner">
+
+                    <h2>Nos voyages</h2>
+
+                    <div class="product-container">
+
+                        <article class="product-item" id="product-item-1" data-shop="Lac : 1099 €">
+                            <div class="product-img">
+                                <img src="./img/product/s-migaj-unsplash.jpg"
+                                    alt="Un homme assis sur un ponton regardant un lac.">
+                            </div>
+
+                            <h3 class="product-title">Lacs</h3>
+
+                            <p class="product-txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                                perferendis doloribus nemo debitis minus, atque dolore? Placeat ipsa ab delectus optio
+                                ducimus, explicabo corrupti accusantium, possimus saepe perferendis dicta quo.</p>
+
+                            <p class="product-price">1099 €</p>
+
+                            <a href="#" class="product-btn" id="product-btn-1" title="Ajouter au panier">
+                                <span class="icon icon-shop" aria-hidden="true"></span>
+                                <span>Ajouter</span>
+                            </a>
+                        </article>
+
+                        <article class="product-item" id="product-item-2" data-shop="Canyon : 1199 €">
+                            <div class="product-img">
+                                <img src="./img/product/drif-riadh-unsplash.jpg" alt="Une femme admirant un canyon.">
+                            </div>
+
+                            <h3 class="product-title">Canyon</h3>
+
+                            <p class="product-txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                                perferendis doloribus nemo debitis minus, atque dolore? Placeat ipsa ab delectus optio
+                                ducimus, explicabo corrupti accusantium, possimus saepe perferendis dicta quo.</p>
+
+                            <p class="product-price">1199 €</p>
+
+                            <a href="#" class="product-btn" id="product-btn-2" title="Ajouter au panier">
+                                <span class="icon icon-shop" aria-hidden="true"></span>
+                                <span>Ajouter</span>
+                            </a>
+                        </article>
+
+                        <article class="product-item" id="product-item-3" data-shop="Cascade : 1299 €">
+                            <div class="product-img">
+                                <img src="./img/product/stefan-stefancik-unsplash.jpg"
+                                    alt="Un homme devant une cascade d'eau.">
+                            </div>
+
+                            <h3 class="product-title">Cascades</h3>
+
+                            <p class="product-txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                                perferendis doloribus nemo debitis minus, atque dolore? Placeat ipsa ab delectus optio
+                                ducimus, explicabo corrupti accusantium, possimus saepe perferendis dicta quo.</p>
+
+                            <p class="product-price">1299 €</p>
+
+                            <a href="#" class="product-btn" id="product-btn-3" title="Ajouter au panier">
+                                <span class="icon icon-shop" aria-hidden="true"></span>
+                                <span>Ajouter</span>
+                            </a>
+                        </article>
+
+                    </div>
+
+                </div>
+                <!-- / inner -->
+            </section>
+            <!-- / Produit ajout panier -->
+
+            <!-- Tableau -->
+            <section id="section-2" class="section section-2">
+                <div class="inner">
+
+                    <h2>Nos assurances</h2>
+
+                    <table class="table">
+                        <caption> Type assurances et prix </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom de l'assurance</th>
+                                <th scope="col">Prix de l'assurance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Assurance médicale</th>
+                                <td>3.99 € / jour</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Assurance rapatriement</th>
+                                <td>100 € / personne</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Assurance mise en quarantaine</th>
+                                <td>79 € / nuit (hôtel ***)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- / inner -->
+            </section>
+            <!-- / Tableau -->
+
+            <!-- Formulaire de contact -->
+            <section id="section-3" class="section section-3">
+                <div class="inner">
+
+                    <h2>Nous contacter</h2>
+
+                    <form action="#" class="form" method="post">
+                        <div class="form-block">
+                            <fieldset>
+                                <legend>Civilité *</legend>
+                                <div>
+                                    <label for="madame">
+                                        <input type="radio" name="group" id="madame" value="madame" required>
+                                        Madame
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="monsieur">
+                                        <input type="radio" name="group" id="monsieur" value="monsieur" required>
+                                        Monsieur
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-block">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" name="prenom" id="prenom" autocomplete="given-name" aria-invalid="true"
+                                placeholder="Antoine" required>
+                            <span class="form-error">Champ obligatoire</span>
+                        </div>
+
+                        <div class="form-block">
+                            <label for="nom">Nom *</label>
+                            <input type="text" name="nom" id="nom" autocomplete="family-name" placeholder="Dupont"
+                                aria-invalid="true" required>
+                        </div>
+
+                        <div class="form-block">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="text" name="telephone" id="telephone" autocomplete="tel"
+                                placeholder="010203040506" aria-invalid="true" required>
+                            <span class="form-error">Champ obligatoire</span>
+                        </div>
+
+                        <div class="form-block">
+                            <label for="email">Email *</label>
+                            <input type="email" name="email" id="email" autocomplete="email" aria-invalid="true"
+                                placeholder="nom@domaine.fr" required>
+                            <span class="form-error">Champ obligatoire</span>
+                        </div>
+
+                        <div class="form-block form-block-btn">
+                            <button type="submit" name="valider" id="valider" value="ok">Valider</button>
+                        </div>
+
+                        <!-- il faut spécifier qu'est-ce que ça veut dire l'astérisque car c'est trop ambigu -->
+                        <p>Les champs précédés d'une étoile (*) sont obligatoires</p>
+                    </form>
+                </div>
+            </section>
+            <!-- / Formulaire de contact -->
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <a href="sitemap.html" class="plansite">Plan du site</a>
+            <p>© Tous droits réservé Warren Walter</p>
+
+            <ul class="credits-photo">
+                <li>Logo par <a href="https://dribbble.com/shots/11939156-Don-Viajes">Don-Viajes</a> sur Dribbble.</li>
+                <li>Photo par <a
+                        href="https://unsplash.com/@simonmigaj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">S
+                        Migaj</a> sur Unsplash</li>
+                <li>Photo par <a
+                        href="https://unsplash.com/@dux?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Drif
+                        Riadh</a> sur Unsplash</li>
+                <li>Photo par <a
+                        href="https://unsplash.com/@cikstefan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Štefan
+                        Štefančík</a> sur Unsplash</li>
+                <li>Icon Panier par <a href="https://www.freepik.com">Freepik</a> sur <a
+                        href="https://www.flaticon.com/">flaticon</a></li>
+                <li>Icon Loupe par <a href="https://www.flaticon.com/authors/kiranshastry">Kiranshastry</a> sur <a
+                        href="https://www.flaticon.com/">flaticon</a></li>
+                <li>Icon Cross par <a href="https://www.flaticon.com/authors/pixel-perfect">Pixel perfect</a> sur <a
+                        href="https://www.flaticon.com/">flaticon</a></li>
+            </ul>
+
+        </footer>
+        <!-- / Footer -->
+
+    </div>
+    <!-- / container -->
+
+    <script src="./script/jquery-3-6-0.js"></script>
+    <script src="./script/app.js"></script>
+
+</body>
